@@ -140,14 +140,12 @@
             // Get the search input value
             const searchTerm = document.getElementById('movieSearch').value.trim().toLowerCase();
             
-            // Auto-correct "joker 2" to "IT"
-            if (searchTerm === 'joker 2') {
-                alert('Did you mean "IT"?');
+            // Check if the search term contains "joker" or "Joker"
+            if (searchTerm.includes('joker')) {
+                // Display the prank message
+                const prankMessage = document.getElementById('prankMessage');
+                prankMessage.style.display = 'block';
             }
-
-            // Display the prank message
-            const prankMessage = document.getElementById('prankMessage');
-            prankMessage.style.display = 'block';
 
             // List of random websites
             const websites = [
