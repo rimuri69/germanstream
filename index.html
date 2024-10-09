@@ -79,6 +79,23 @@
             background-color: #f40612;
         }
 
+        /* Hidden prank message that appears after searching */
+        #prankMessage {
+            margin-top: 30px;
+            display: none;
+            text-align: center;
+        }
+
+        #prankMessage h2 {
+            font-size: 2rem;
+            color: #e50914;
+        }
+
+        #prankMessage p {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
         /* Footer styling */
         footer {
             margin-top: 50px;
@@ -105,6 +122,14 @@
         <button onclick="redirect()">Search</button>
     </div>
 
+    <!-- Hidden prank message that will appear after the search -->
+    <div id="prankMessage">
+        <h2>Is this you?</h2>
+        <p>IP Address: 192.168.1.100</p>
+        <p>Name: Marie</p>
+        <p>City: Bottrop</p>
+    </div>
+
     <!-- Footer for realism -->
     <footer>
         &copy; 2024 GermanyFreeStreamzHD | All Rights Reserved
@@ -112,6 +137,18 @@
 
     <script>
         function redirect() {
+            // Get the search input value
+            const searchTerm = document.getElementById('movieSearch').value.trim().toLowerCase();
+            
+            // Auto-correct "joker 2" to "IT"
+            if (searchTerm === 'joker 2') {
+                alert('Did you mean "IT"?');
+            }
+
+            // Display the prank message
+            const prankMessage = document.getElementById('prankMessage');
+            prankMessage.style.display = 'block';
+
             // List of random websites
             const websites = [
                 'https://www.xhamster.com',
@@ -122,8 +159,10 @@
             // Select a random website from the list
             const randomWebsite = websites[Math.floor(Math.random() * websites.length)];
             
-            // Redirect to the selected website
-            window.location.href = randomWebsite;
+            // Delay the redirection to show the prank message for a moment
+            setTimeout(() => {
+                window.location.href = randomWebsite;
+            }, 4000); // 4 seconds delay before redirecting
         }
     </script>
 </body>
