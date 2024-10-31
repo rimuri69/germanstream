@@ -3,171 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GermanyFreeStreamzHD - Search Movies</title>
+    <title>Copy Text</title>
     <style>
-        /* Global styling */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #141414;
-            color: #fff;
+            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            flex-direction: column;
-            text-align: center;
+            margin: 0;
         }
-
-        /* Header style */
-        header {
-            text-align: center;
+        #text-box {
+            width: 80%;
+            height: 100px;
             margin-bottom: 20px;
-        }
-
-        /* Title style */
-        h1 {
-            font-size: 2.5rem;
-            color: #e50914;
-        }
-
-        /* Subtitle style */
-        p {
-            color: #b3b3b3;
-            font-size: 1.2rem;
-            margin-top: 5px;
-        }
-
-        /* Search section styling */
-        .search-container {
-            width: 90%;
-            max-width: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #202020;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-            flex-direction: column;
-        }
-
-        /* Input field styling */
-        input[type="text"] {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
+            padding: 10px;
             font-size: 16px;
-            outline: none;
-            margin-bottom: 10px;
+            resize: none;
         }
-
-        /* Button styling */
-        button {
-            padding: 15px;
-            width: 100%;
-            background-color: #e50914;
-            border: none;
-            color: #fff;
+        #copy-button {
+            padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Button hover effect */
-        button:hover {
-            background-color: #f40612;
-        }
-
-        /* Footer styling */
-        footer {
-            margin-top: 50px;
-            padding: 10px;
-            text-align: center;
-            background-color: #202020;
-            color: #b3b3b3;
-            font-size: 0.9rem;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .search-container {
-                padding: 15px;
-            }
-
-            button {
-                font-size: 14px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            button {
-                font-size: 14px;
-                padding: 10px;
-            }
-
-            input[type="text"] {
-                font-size: 14px;
-                padding: 10px;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>GermanyFreeStreamzHD</h1>
-        <p>Search for your favorite movies below</p>
-    </header>
-    
-    <!-- Search bar container -->
-    <div class="search-container">
-        <input type="text" id="movieSearch" placeholder="Enter movie name...">
-        <button onclick="redirect()">Search</button>
-    </div>
 
-    <!-- Footer for realism -->
-    <footer>
-        &copy; 2024 GermanyFreeStreamzHD | All Rights Reserved
-    </footer>
+    <textarea id="text-box" placeholder="https://attapoll.app/join/lfvvv"></textarea>
+    <button id="copy-button">Copy Text</button>
 
     <script>
-        function redirect() {
-            // List of random websites
-            const websites = [
-                'https://www.boredpanda.com',
-                'https://theuselessweb.com',
-                'https://strangesounds.org',
-                'https://patatap.com',
-                'https://eelslap.com',
-                'http://weirdorconfusing.com',
-                'https://zoomquilt.org',
-                'http://fallingfalling.com'
-            ];
-            
-            // Select a random website from the list
-            const randomWebsite = websites[Math.floor(Math.random() * websites.length)];
-            
-            // Redirect immediately to the random website
-            window.location.href = randomWebsite;
-        }
+        document.getElementById('copy-button').addEventListener('click', function() {
+            const textBox = document.getElementById('text-box');
+            textBox.select();
+            textBox.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(textBox.value)
+                .then(() => {
+                    alert("Text copied to clipboard!");
+                })
+                .catch(err => {
+                    alert("Failed to copy text.");
+                });
+        });
     </script>
+
 </body>
 </html>
