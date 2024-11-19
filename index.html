@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy Text</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        #text-box {
-            width: 80%;
-            height: 100px;
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 16px;
-            resize: none;
-        }
-        #copy-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Money</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Send Money</h1>
+    <form id="moneyForm">
+      <input type="text" id="email" placeholder="Recipient's Email" required />
+      <input type="number" id="amount" placeholder="Amount to Send ($)" required />
+      <button type="button" onclick="sendMoney()">Send Money</button>
+    </form>
+    <div class="message" id="message"></div>
+  </div>
 
-    <textarea id="text-box" placeholder="asdsaddfsa"></textarea>
-    <button id="copy-button">Copy Text</button>
+  <script>
+    function sendMoney() {
+      const email = document.getElementById('email').value;
+      const amount = document.getElementById('amount').value;
+      const message = document.getElementById('message');
 
-    <script>
-        document.getElementById('copy-button').addEventListener('click', function() {
-            const textBox = document.getElementById('text-box');
-            textBox.select();
-            textBox.setSelectionRange(0, 99999); // For mobile devices
-            navigator.clipboard.writeText(textBox.value)
-                .then(() => {
-                    alert("Text copied to clipboard!");
-                })
-                .catch(err => {
-                    alert("Failed to copy text.");
-                });
-        });
-    </script>
-
+      if (email && amount) {
+        message.textContent = `Money Sent: $${amount} to ${email}`;
+        message.style.color = 'green';
+      } else {
+        message.textContent = 'Please fill out all fields.';
+        message.style.color = 'red';
+      }
+    }
+  </script>
 </body>
 </html>
