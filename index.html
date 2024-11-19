@@ -7,59 +7,80 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+    }
+    .header {
+      background-color: #003087;
+      color: white;
       padding: 20px;
-      background-color: #f9f9f9;
+      text-align: center;
     }
     .container {
       max-width: 400px;
-      margin: auto;
-      background: #ffffff;
-      padding: 20px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ddd;
     }
     h1 {
       color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
     input {
       width: calc(100% - 20px);
       padding: 10px;
       margin: 10px 0;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 16px;
     }
     button {
-      background-color: #4CAF50;
+      width: 100%;
+      background-color: #0070ba;
       color: white;
-      padding: 10px 20px;
+      padding: 10px;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #45a049;
+      background-color: #005c9c;
     }
     .message {
       margin-top: 20px;
       font-size: 18px;
       color: green;
     }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #777;
+    }
   </style>
 </head>
 <body>
+  <div class="header">
+    <h2>PayPal</h2>
+  </div>
   <div class="container">
     <h1>Send Money</h1>
     <form id="moneyForm">
-      <input type="text" id="email" placeholder="Recipient's Email" required />
+      <input type="email" id="email" placeholder="Recipient's Email" required />
       <input type="number" id="amount" placeholder="Amount to Send ($)" required />
       <button type="button" onclick="sendMoney()">Send Money</button>
     </form>
     <div class="message" id="message"></div>
   </div>
+  <footer>
+    © 2024 PayPal, Inc. All rights reserved.
+  </footer>
 
   <script>
     function sendMoney() {
