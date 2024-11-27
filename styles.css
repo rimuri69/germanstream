@@ -1,74 +1,94 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
+    background: #f9f9f9;
+    color: #333;
 }
 
 header {
-    background: #333;
+    background: #222;
     color: #fff;
     padding: 1rem 0;
+    text-align: center;
 }
 
 header h1 {
-    text-align: center;
     margin: 0;
-}
-
-header nav {
-    text-align: center;
-    margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: fadein 2s ease-in-out;
 }
 
 header nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 header nav a:hover {
     text-decoration: underline;
 }
 
-.hero {
-    text-align: center;
-    padding: 2rem;
-    background: #f4f4f4;
-}
-
-.articles {
-    padding: 2rem;
-    background: #e9ecef;
-}
-
-.articles h2, .full-article h2 {
-    text-align: center;
-}
-
-article {
+.full-article {
     max-width: 800px;
-    margin: 0 auto 2rem;
+    margin: 2rem auto;
+    padding: 2rem;
     background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slidein 1.5s ease-out;
 }
 
-.read-more {
-    display: inline-block;
-    margin-top: 1rem;
-    text-decoration: none;
-    color: #007bff;
+.full-article h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #222;
 }
 
-.read-more:hover {
-    text-decoration: underline;
+.full-article h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: #444;
 }
 
 footer {
     text-align: center;
-    background: #333;
-    color: #fff;
     padding: 1rem 0;
+    background: #222;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fadein {
+    animation: fadein 1.5s ease-in-out;
+}
+
+.animate-slidein {
+    animation: slidein 1.5s ease-out;
 }
