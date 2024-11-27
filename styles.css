@@ -4,44 +4,43 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: #1a1a1a;
-    color: #ddd;
+    background: #f8f9fa;
+    color: #212529;
 }
 
 header {
-    background: #400000;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
     padding: 1rem 0;
     text-align: center;
-    border-bottom: 2px solid #800000;
+    border-bottom: 1px solid #dee2e6;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    animation: fadein 2s ease-in-out;
-    color: #ff6666;
 }
 
 header nav a {
-    color: #ff9999;
+    color: #212529;
     text-decoration: none;
     margin: 0 1rem;
     font-size: 1rem;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 header nav a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+    color: #495057;
 }
 
 .hero {
     text-align: center;
     padding: 2rem;
-    background: #600000;
-    color: #fff;
+    background: #ffffff;
+    color: #212529;
+    border-bottom: 1px solid #dee2e6;
 }
 
 main {
@@ -49,49 +48,57 @@ main {
 }
 
 .articles {
-    background: #300000;
+    background: #ffffff;
     padding: 2rem;
-    border-radius: 10px;
-    color: #fff;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
 }
 
 .articles h2 {
     text-align: center;
-    color: #ff6666;
+    color: #212529;
+    margin-bottom: 2rem;
 }
 
 article {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: #400000;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 article h3 {
     margin-top: 0;
-    color: #ffcccc;
+    color: #212529;
 }
 
 .read-more {
     display: inline-block;
     margin-top: 1rem;
-    color: #ff9999;
+    color: #007bff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .read-more:hover {
-    color: #fff;
     text-decoration: underline;
 }
 
 footer {
     text-align: center;
     padding: 1rem 0;
-    background: #400000;
-    color: #fff;
+    background: #ffffff;
+    color: #212529;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
 }
 
 /* Animations */
@@ -104,21 +111,6 @@ footer {
     }
 }
 
-@keyframes slidein {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 .animate-fadein {
     animation: fadein 1.5s ease-in-out;
-}
-
-.animate-slidein {
-    animation: slidein 1.5s ease-out;
 }
