@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+header nav {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+.articles {
+    padding: 2rem;
+    background: #e9ecef;
+}
+
+.articles h2, .full-article h2 {
+    text-align: center;
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
